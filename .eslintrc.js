@@ -17,5 +17,7 @@ module.exports = {
   },
   ignorePatterns: [],
   rules: {
+    'lines-between-class-members': 'off',
+    'no-plusplus': 'off',
   },
 };

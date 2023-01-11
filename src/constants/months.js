@@ -1,50 +1,50 @@
 module.exports = {
   January: {
     shortForm: 'Jan',
-    index: 0,
+    index: 1,
   },
   February: {
     shortForm: 'Feb',
-    index: 1,
+    index: 2,
   },
   March: {
     shortForm: 'Mar',
-    index: 2,
+    index: 3,
   },
   April: {
     shortForm: 'Apr',
-    index: 3,
+    index: 4,
   },
   May: {
     shortForm: 'May',
-    index: 4,
+    index: 5,
   },
   June: {
     shortForm: 'Jun',
-    index: 5,
+    index: 6,
   },
   July: {
     shortForm: 'Jul',
-    index: 6,
+    index: 7,
   },
   August: {
     shortForm: 'Aug',
-    index: 7,
+    index: 8,
   },
   September: {
     shortForm: 'Sep',
-    index: 8,
+    index: 9,
   },
   October: {
     shortForm: 'Oct',
-    index: 9,
+    index: 10,
   },
   November: {
     shortForm: 'Nov',
-    index: 10,
+    index: 11,
   },
   December: {
     shortForm: 'Dec',
-    index: 11,
+    index: 12,
   },
 };

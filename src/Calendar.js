@@ -20,7 +20,7 @@ class Calendar {
 
     const monthsNames = Object.keys(MONTHS);
     for (let i = 0; i < monthsNames.length; i++) {
-      this.#months.push(new Month(monthsNames[i]));
+      this.#months.push(new Month(this.#year, monthsNames[i]));
     }
   }
 
