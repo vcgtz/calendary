@@ -1,5 +1,5 @@
 const MONTHS = require('./constants/months');
-const Month = require('./Monthd');
+const Month = require('./Month');
 
 class Calendar {
   #year;
