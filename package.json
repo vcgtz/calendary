@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/<user>/<repo>.git"
+    "url": "git+https://github.com/vcgtz/jscal.git"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/<user>/<repo>/issues"
+    "url": "https://github.com/vcgtz/jscal/issues"
   },
-  "homepage": "https://github.com/<user>/<repo>#readme",
+  "homepage": "https://github.com/vcgtz/jscal#readme",
   "dependencies": {},
   "devDependencies": {
     "eslint": "^8.31.0",

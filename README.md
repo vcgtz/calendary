@@ -1,12 +1,13 @@
 # jscal
-Minimal library to generate random values.
+Module to work easily with calendars in JS
 
 ## Installation
 This module is available through [NPM](https://www.npmjs.com/).
 
 To install this library, you just need to run:
 ```bash
-npm i <your_package>
+npm i jscal
 ```
 
 ## License
+MIT
