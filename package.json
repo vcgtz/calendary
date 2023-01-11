@@ -1,5 +1,5 @@
 {
-  "name": "jscal",
+  "name": "jscalendar",
   "version": "0.0.1",
   "description": "Module to work easily with calendars in JS",
   "main": "src/index.js",
