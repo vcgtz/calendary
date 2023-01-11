@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vcgtz/jscal.git"
+    "url": "git+https://github.com/vcgtz/calendary.git"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vcgtz/jscal/issues"
+    "url": "https://github.com/vcgtz/calendary/issues"
   },
-  "homepage": "https://github.com/vcgtz/jscal#readme",
+  "homepage": "https://github.com/vcgtz/calendary#readme",
   "dependencies": {},
   "devDependencies": {
     "eslint": "^8.31.0",
