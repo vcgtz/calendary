@@ -2,7 +2,7 @@
   "name": "calendary",
   "version": "0.0.2",
   "description": "Module to work easily with calendars in JS",
-  "main": "src/index.js",
+  "main": "src/Calendar.js",
   "scripts": {
     "format": "prettier --write \"src/**/*.js\"",
     "format:check": "prettier --check \"src/**/*.js\"",
