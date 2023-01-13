@@ -25,7 +25,11 @@ class Day {
   }
 
   getDay() {
-    return this.day;
+    return this.#day;
+  }
+
+  getDate() {
+    return this.#date;
   }
 };
 
