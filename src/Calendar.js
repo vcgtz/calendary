@@ -3,7 +3,6 @@ const Month = require('./Month');
 
 class Calendar {
   #year;
-
   #months;
 
   constructor(year) {
@@ -30,6 +29,10 @@ class Calendar {
 
   getMonths() {
     return this.#months;
+  }
+
+  getTotalOfMonths() {
+    return this.#months.length;
   }
 }
 
