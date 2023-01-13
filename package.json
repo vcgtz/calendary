@@ -1,6 +1,6 @@
 {
   "name": "calendary",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Module to work easily with calendars in JS",
   "main": "src/Calendar.js",
   "scripts": {
