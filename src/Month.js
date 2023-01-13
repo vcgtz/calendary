@@ -52,7 +52,7 @@ class Month {
   }
 
   getLastDay() {
-    return new Date(this.#year, this.index, 0).getDate();
+    return new Date(this.#year, this.#month, 0).getDate();
   }
 
   getDays() {
