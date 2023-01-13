@@ -1,3 +1,4 @@
+const Day = require('../src/Day');
 const Month = require('../src/Month');
 
 describe('Testing Month class', () => {
@@ -19,5 +20,12 @@ describe('Testing Month class', () => {
     expect(month.getLastDay()).toBe(29);
     expect(month.getTotalOfDays()).toBe(29);
     expect(month.getMonth()).toBe(2);
+  });
+
+  it('Testing days array generation', () => {
+    const month = new Month(1992, 'March');
+    const daysResult = month.getDays().every((day) => day instanceof Day);
+
+    expect(daysResult).toBe(true);
   });
 });
