@@ -5,6 +5,10 @@ class Calendar {
   #year;
   #months;
 
+  /**
+   * Calendar class
+   * @param {Number} year Year for which you want the calendar
+   */
   constructor(year) {
     this.#year = year;
     this.#months = [];
@@ -23,14 +27,26 @@ class Calendar {
     }
   }
 
+  /**
+   * Returns the year of the calendar
+   * @returns {Number} year
+   */
   getYear() {
     return this.#year;
   }
 
+  /**
+   * Returns an array of months
+   * @returns {Array.<Month>} Array of instances of Month class
+   */
   getMonths() {
     return this.#months;
   }
 
+  /**
+   * Returns the total of months in the calendar
+   * @returns {Number} Total of months
+   */
   getTotalOfMonths() {
     return this.#months.length;
   }
