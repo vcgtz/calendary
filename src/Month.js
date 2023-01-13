@@ -7,7 +7,7 @@ class Month {
   #shortName;
   #month;
   #days;
-  
+
   /**
    * Month class
    * @param {Number} year       Year for which you want the month

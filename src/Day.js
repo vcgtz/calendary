@@ -14,8 +14,10 @@ class Day {
     this.#year = year;
     this.#month = monthName;
     this.#day = day;
-    
-    this.#date = new Date(`${this.#month} ${this.#day}, ${this.#year} 00:00:00`);
+
+    this.#date = new Date(
+      `${this.#month} ${this.#day}, ${this.#year} 00:00:00`
+    );
   }
 
   /**
@@ -57,6 +59,6 @@ class Day {
   getDate() {
     return this.#date;
   }
-};
+}
 
 module.exports = Day;
