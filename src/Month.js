@@ -98,7 +98,7 @@ class Month {
    */
   getWeeks() {
     const weeks = [];
-    const generator = this.daysGenerator();
+    const generator = this.#daysGenerator();
     let currentDay = generator.next();
 
     while (!currentDay.done) {
@@ -127,7 +127,27 @@ class Month {
     return this.#days.length;
   }
 
-  * daysGenerator() {
+  print() {
+    console.log(`${this.#name}, ${this.#year}`);
+
+    const weeks = this.getWeeks();
+    
+    for (let i = 0; i < weeks.length; i++) {
+      const printableWeek = [];
+
+      for (let j = 0; j < weeks[i].length; j++) {
+        if (weeks[i][j]) {
+          printableWeek.push(`${weeks[i][j].getDay()}`.padStart(2, ' '));
+        } else {
+          printableWeek.push('  ');
+        }
+      }
+
+      console.log(printableWeek.join(' '));
+    }
+  }
+
+  * #daysGenerator() {
     for (let i = 0; i < this.#days.length; i++) {
       yield this.#days[i];
     }

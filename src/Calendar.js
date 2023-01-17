@@ -50,6 +50,20 @@ class Calendar {
   getTotalOfMonths() {
     return this.#months.length;
   }
+
+  /**
+   * Returns an array representation of the calendar
+   * @returns {Array} Array of months
+   */
+  toArray() {
+    const months = [];
+
+    for (let i = 0; i < this.getTotalOfMonths(); i++) {
+      months.push(this.#months[i].getWeeks());
+    }
+
+    return months;
+  }
 }
 
 module.exports = Calendar;
