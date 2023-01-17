@@ -53,6 +53,14 @@ class Day {
   }
 
   /**
+   * Returns the day of the week as a number
+   * @returns {Number} Day of the week between 0-6
+   */
+  getDayOfTheWeek() {
+    return this.#date.getDay();
+  }
+
+  /**
    * Returns the equivalent day in a Date object
    * @returns {Date} Date object with the current date
    */

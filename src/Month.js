@@ -93,11 +93,44 @@ class Month {
   }
 
   /**
+   * Returns an bidimentional array representing weeks of a month
+   * @returns {Array.<Array.<Day>>} Weeks from the current month
+   */
+  getWeeks() {
+    const weeks = [];
+    const generator = this.daysGenerator();
+    let currentDay = generator.next();
+
+    while (!currentDay.done) {
+      const week = [];
+
+      for (let i = 0; i < 7; i++) {
+        if (currentDay.done || i < currentDay.value.getDayOfTheWeek()) {
+          week.push(null);
+        } else {
+          week.push(currentDay.value);
+          currentDay = generator.next();
+        }
+      }
+
+      weeks.push(week);
+    }
+
+    return weeks;
+  }
+
+  /**
    * Returns the total of days in the month
    * @returns {Number} Total of days
    */
   getTotalOfDays() {
     return this.#days.length;
+  }
+
+  * daysGenerator() {
+    for (let i = 0; i < this.#days.length; i++) {
+      yield this.#days[i];
+    }
   }
 }
 
