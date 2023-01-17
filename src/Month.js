@@ -131,7 +131,7 @@ class Month {
     console.log(`${this.#name}, ${this.#year}`);
 
     const weeks = this.getWeeks();
-    
+
     for (let i = 0; i < weeks.length; i++) {
       const printableWeek = [];
 
@@ -147,7 +147,7 @@ class Month {
     }
   }
 
-  * #daysGenerator() {
+  *#daysGenerator() {
     for (let i = 0; i < this.#days.length; i++) {
       yield this.#days[i];
     }

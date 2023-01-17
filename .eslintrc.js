@@ -19,5 +19,6 @@ module.exports = {
   rules: {
     'lines-between-class-members': 'off',
     'no-plusplus': 'off',
+    'no-console': 'off',
   },
 };
