@@ -1,27 +1,29 @@
-const MONTHS = require('./constants/months');
-const Month = require('./Month');
+import MONTHS from './constants/months';
+import Month from './Month';
+import { Week } from './extraTypes';
 
-class Calendar {
-  #year;
-  #months;
+export default class Calendar {
+  #year: number;
+  #months: Month[];
 
   /**
    * Calendar class
    * @param {Number} year Year for which you want the calendar
    */
-  constructor(year) {
+  constructor(year: number) {
     this.#year = year;
     this.#months = [];
 
     this.#build();
   }
 
-  #build() {
+  #build(): void {
     if (!this.#year) {
       throw new Error('Year is not specified');
     }
 
-    const monthsNames = Object.keys(MONTHS);
+    const monthsNames: string[] = Object.keys(MONTHS);
+
     for (let i = 0; i < monthsNames.length; i++) {
       this.#months.push(new Month(this.#year, monthsNames[i]));
     }
@@ -31,7 +33,7 @@ class Calendar {
    * Returns the year of the calendar
    * @returns {Number} year
    */
-  getYear() {
+  getYear(): number {
     return this.#year;
   }
 
@@ -39,7 +41,7 @@ class Calendar {
    * Returns an array of months
    * @returns {Array.<Month>} Array of instances of Month class
    */
-  getMonths() {
+  getMonths(): Month[] {
     return this.#months;
   }
 
@@ -47,7 +49,7 @@ class Calendar {
    * Returns the total of months in the calendar
    * @returns {Number} Total of months
    */
-  getTotalOfMonths() {
+  getTotalOfMonths(): number {
     return this.#months.length;
   }
 
@@ -55,7 +57,7 @@ class Calendar {
    * Returns an array representation of the calendar
    * @returns {Array} Array of months
    */
-  toArray() {
+  toArray(): Week[][] {
     const months = [];
 
     for (let i = 0; i < this.getTotalOfMonths(); i++) {
@@ -65,5 +67,3 @@ class Calendar {
     return months;
   }
 }
-
-module.exports = Calendar;

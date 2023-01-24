@@ -1,8 +1,8 @@
 class Day {
-  #year;
-  #month;
-  #day;
-  #date;
+  #year: number;
+  #month: string;
+  #day: number;
+  #date: Date;
 
   /**
    * Day class
@@ -10,7 +10,7 @@ class Day {
    * @param {String} monthName  Full name of the month in English
    * @param {Number} day        Number of the day
    */
-  constructor(year, monthName, day) {
+  constructor(year: number, monthName: string, day: number) {
     this.#year = year;
     this.#month = monthName;
     this.#day = day;
@@ -24,7 +24,7 @@ class Day {
    * Returns the year of the calendar
    * @returns {Number} year
    */
-  getYear() {
+  getYear(): number {
     return this.#year;
   }
 
@@ -32,7 +32,7 @@ class Day {
    * Returns the name of the month
    * @returns {String} Name of the month
    */
-  getMonthName() {
+  getMonthName(): string {
     return this.#month;
   }
 
@@ -40,7 +40,7 @@ class Day {
    * Returns a number that represents the month
    * @returns {Number} Number of the month in the year
    */
-  getMonth() {
+  getMonth(): number {
     return this.#date.getMonth() + 1;
   }
 
@@ -48,7 +48,7 @@ class Day {
    * Returns the number of the current day
    * @returns {Number} Number of day
    */
-  getDay() {
+  getDay(): number {
     return this.#day;
   }
 
@@ -56,7 +56,7 @@ class Day {
    * Returns the day of the week as a number
    * @returns {Number} Day of the week between 0-6
    */
-  getDayOfTheWeek() {
+  getDayOfTheWeek(): number {
     return this.#date.getDay();
   }
 
@@ -64,9 +64,9 @@ class Day {
    * Returns the equivalent day in a Date object
    * @returns {Date} Date object with the current date
    */
-  getDate() {
+  getDate(): Date {
     return this.#date;
   }
 }
 
-module.exports = Day;
+export default Day;

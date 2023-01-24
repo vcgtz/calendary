@@ -1,19 +1,20 @@
-const MONTHS = require('./constants/months');
-const Day = require('./Day');
+import MONTHS from './constants/months';
+import Day from './Day';
+import { Week } from './extraTypes';
 
-class Month {
-  #year;
-  #name;
-  #shortName;
-  #month;
-  #days;
+export default class Month {
+  #year: number;
+  #name: string;
+  #shortName: string;
+  #month: number;
+  #days: Day[];
 
   /**
    * Month class
    * @param {Number} year       Year for which you want the month
    * @param {String} monthName  Full name of the month in English
    */
-  constructor(year, monthName) {
+  constructor(year: number, monthName: string) {
     this.#name = monthName;
     this.#year = year;
     this.#days = [];
@@ -30,7 +31,7 @@ class Month {
     this.#build();
   }
 
-  #build() {
+  #build(): void {
     if (!this.#year) {
       throw new Error('Year is not specified');
     }
@@ -48,7 +49,7 @@ class Month {
    * Returns the name of the month
    * @returns {String} Name of the month
    */
-  getName() {
+  getName(): string {
     return this.#name;
   }
 
@@ -56,7 +57,7 @@ class Month {
    * Returns the short name of the month
    * @returns {String} Short name of the month
    */
-  getShortName() {
+  getShortName(): string {
     return this.#shortName;
   }
 
@@ -64,7 +65,7 @@ class Month {
    * Returns the year of the calendar
    * @returns {Number} year
    */
-  getYear() {
+  getYear(): number {
     return this.#year;
   }
 
@@ -72,7 +73,7 @@ class Month {
    * Returns a number that represents the month
    * @returns {Number} Number of the month in the year
    */
-  getMonth() {
+  getMonth(): number {
     return this.#month;
   }
 
@@ -80,7 +81,7 @@ class Month {
    * Returns the number of the last day in the month
    * @returns {Number} Number of the last day
    */
-  getLastDay() {
+  getLastDay(): number {
     return new Date(this.#year, this.#month, 0).getDate();
   }
 
@@ -88,7 +89,7 @@ class Month {
    * Returns an array of days
    * @returns {Array.<Day>} Array of instances of Day class
    */
-  getDays() {
+  getDays(): Day[] {
     return this.#days;
   }
 
@@ -96,13 +97,13 @@ class Month {
    * Returns an bidimentional array representing weeks of a month
    * @returns {Array.<Array.<Day>>} Weeks from the current month
    */
-  getWeeks() {
-    const weeks = [];
+  getWeeks(): Week[] {
+    const weeks: Week[] = [];
     const generator = this.#daysGenerator();
     let currentDay = generator.next();
 
     while (!currentDay.done) {
-      const week = [];
+      const week: Week = [];
 
       for (let i = 0; i < 7; i++) {
         if (currentDay.done || i < currentDay.value.getDayOfTheWeek()) {
@@ -123,11 +124,11 @@ class Month {
    * Returns the total of days in the month
    * @returns {Number} Total of days
    */
-  getTotalOfDays() {
+  getTotalOfDays(): number {
     return this.#days.length;
   }
 
-  print() {
+  print(): void {
     console.log(`${this.#name}, ${this.#year}`);
 
     const weeks = this.getWeeks();
@@ -137,7 +138,7 @@ class Month {
 
       for (let j = 0; j < weeks[i].length; j++) {
         if (weeks[i][j]) {
-          printableWeek.push(`${weeks[i][j].getDay()}`.padStart(2, ' '));
+          printableWeek.push(`${weeks[i][j]?.getDay()}`.padStart(2, ' '));
         } else {
           printableWeek.push('  ');
         }
@@ -153,5 +154,3 @@ class Month {
     }
   }
 }
-
-module.exports = Month;
