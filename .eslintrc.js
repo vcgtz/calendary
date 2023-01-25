@@ -9,12 +9,17 @@ module.exports = {
   extends: [
     'airbnb-base',
     'prettier',
+    'plugin:@typescript-eslint/recommended'
   ],
   overrides: [
   ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
   },
+  plugins: [
+    '@typescript-eslint',
+  ],
   ignorePatterns: [],
   rules: {
     'lines-between-class-members': 'off',
