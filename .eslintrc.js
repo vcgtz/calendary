@@ -25,5 +25,12 @@ module.exports = {
     'lines-between-class-members': 'off',
     'no-plusplus': 'off',
     'no-console': 'off',
+    'import/extensions': 'off',
+  },
+  root: true,
+  settings: {
+    "import/resolver": {
+      typescript: {}
+    },
   },
 };
