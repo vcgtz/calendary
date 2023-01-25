@@ -15,7 +15,7 @@ npm i calendary
 ## Usage
 Create an instance of Calendar:
 ```js
-const Calendar = require('calendary');
+const { Calendar } = require('calendary');
 
 const calendar = new Calendar(2023);
 ```
@@ -34,7 +34,7 @@ firstMonth.getDays();
 
 You can get a simple representation of a month using the `print()` method from a month object:
 ```js
-const Calendar = require('calendary');
+const { Calendar } = require('calendary');
 const calendar = new Calendar(2023);
 const march = calendar.getMonths()[2];
 
@@ -83,11 +83,11 @@ With this, you can iterate over each month and each week to print the calendar a
 
 Also, you can get the week representation from a single month:
 ```js
-const calendar = new Calendar(2023);
+const { Calendar } = new Calendar(2023);
 const january = calendar.getMonths()[0];
 
 const janWeeks = january.getWeeks();
 ```
 
 ## License
-MIT
+[MIT](https://github.com/vcgtz/calendary/blob/main/LICENSE)
